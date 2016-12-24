@@ -1,0 +1,28 @@
+<h1> Welcome to results page!!!</h1>
+
+    <% parsedData["Search"].forEach(function(result){ %>
+        <ul>
+            <li>
+                <strong>Title :</strong><%=result["Title"]%>
+            </li>
+            <li>
+                <strong>Year :</strong><%=result["Year"]%>
+            </li>
+            <li>
+                <strong>imdbID :</strong><%=result["imdbID"]%>
+            </li>
+            <li>
+                <strong>Type :</strong><%=result["Type"]%>
+            </li>
+            <li>
+                <img src = <%=result["Poster"]%> ></img>
+            </li>
+        </ul>
+    <% });%>
+    
+    
+     
+
+
+
+<a href='/'>Search Again</a>

@@ -1,0 +1,15 @@
+
+<h1> Welcome to posts page </h1>
+
+<% for(var i = 0; i < posts.length; i++){ %>
+
+<li> Title of the book is <b><%= posts[i].title %></b> and Author name is <b> <%= posts[i].author %></b> </li> 
+
+<% } %>
+
+<hr></hr>
+
+<% posts.forEach(function(post){ %>
+
+    <li> <%= post.title%> - <strong> <%= post.author%> </strong> </li>
+<% }); %>
