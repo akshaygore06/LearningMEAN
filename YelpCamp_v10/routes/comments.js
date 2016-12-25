@@ -58,7 +58,7 @@ router.post("/",isLoggedin,function(req,res){
 
 // Edit Comments
 
-router.get("/:comment_id/edit", isLoggedin, function(req, res) {
+router.get("/:comment_id/edit", checkCommentOwnership, function(req, res) {
     
        Comment.findById(req.params.comment_id, function(err,foundComment){
           if(err)
@@ -77,7 +77,7 @@ router.get("/:comment_id/edit", isLoggedin, function(req, res) {
     
     //COMMENTS UPDATE
     
-router.put("/:comment_id", isLoggedin, function(req, res) {
+router.put("/:comment_id", checkCommentOwnership, function(req, res) {
     
        Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment, function(err,foundComment){
           if(err)
@@ -94,6 +94,16 @@ router.put("/:comment_id", isLoggedin, function(req, res) {
     
 });
     
+    
+// DESTROY COMMENT
+
+router.delete("/:comment_id/",checkCommentOwnership, function(req,res){
+  Comment.findByIdAndRemove(req.params.comment_id,function(err,comment){
+    
+          res.redirect("/campgrounds/"+ req.params.id);
+      
+  }) ;
+});
 
 
 //middleware
@@ -110,7 +120,7 @@ function checkCommentOwnership(req,res,next)
 {
     if(req.isAuthenticated())
     {
-        Comment.findById(req.params.id, function(err, comment) {
+        Comment.findById(req.params.comment_id, function(err, comment) {
             if(err)
             {
                 res.redirect("/campgrounds");
