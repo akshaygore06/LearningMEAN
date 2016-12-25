@@ -17,8 +17,6 @@ router.get("/",function(req,res){
       }
        
    });
- //  res.render("campground",{campgrounds:campgrounds});
-   
 });
 
 router.post("/",function(req,res){
@@ -65,7 +63,7 @@ router.get("/:id",function(req, res) {
   });
 });
 
-
+//middleware
 function isLoggedin(req,res,next){
     if(req.isAuthenticated()){
         return next();
