@@ -2,18 +2,13 @@ var express = require("express"),
     Campground = require("../models/campground"),
     Comment = require("../models/comment"),
     passport = require("passport"),
-    router = express.Router()
-////// =============
+    router = express.Router({mergeParams: true})
 
-///// Comment routes
 
-///// ==============
-
+//Comments new
 
 router.get("/new", isLoggedin, function(req, res) {
- 
- //find campground by id
- 
+
  Campground.findById(req.params.id, function(err,campground){
    if(err)
    {
@@ -30,8 +25,7 @@ router.get("/new", isLoggedin, function(req, res) {
 
 
 router.post("/",isLoggedin,function(req,res){
-   
-   // lookuo campground id
+
    Campground.findById(req.params.id, function(err,campground){
         if(err)
         {
@@ -54,12 +48,11 @@ router.post("/",isLoggedin,function(req,res){
             });
         }
    } ) ;
-  
-   //add comment
-   //redirect to show
 });
 
 
+
+//middleware
 function isLoggedin(req,res,next){
     if(req.isAuthenticated()){
         return next();
