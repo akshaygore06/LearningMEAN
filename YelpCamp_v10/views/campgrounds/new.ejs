@@ -1,0 +1,35 @@
+<% include ../partials/header%>
+
+<div class="container">
+    <div class="row">
+        <div class = "col-md-3"></div>
+        <div class = "col-md-6">
+            <h1 style="text-align:center;margin:25px auto;">Create a New Campground</h1>
+            <form action = "/campgrounds" method = "POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" id = "name" name = "name" placeholder = "name of image"></input>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id = "url" name = "image" placeholder = "image url"></input>
+                </div >
+                <div class="form-group">
+                    <textarea type="text" rows="3" class="form-control" id = "description" name = "description" placeholder = "description"></textarea>
+                </div >
+                <div class="form-group">
+                <button class=" btn btn-lg btn-primary btn-block">Submit</button>
+                </div>
+                <a href="/campgrounds"> Go Back</a>
+
+            </form>
+        </div>
+        <div class = "col-md-3"></div>
+    </div>
+    
+
+
+</div>
+<br>
+<br>
+
+
+<% include ../partials/footer%>
