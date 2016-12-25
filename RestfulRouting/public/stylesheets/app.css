@@ -1,4 +1,4 @@
-i.icon{
+.icon{
     font-size: 2em;
 }
 
@@ -17,4 +17,8 @@ body{
 
 #chev{
     font-size: 1em;
+}
+
+#delete-form{
+    display:inline;
 }
