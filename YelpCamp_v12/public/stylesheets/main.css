@@ -1,3 +1,11 @@
+/*body{*/
+   /*background-color: gray;*/
+ 
+/*   background-position:center center;*/
+/*   background-size:cover;*/
+/*   background-image : url("https://source.unsplash.com/user/blakeliskphoto/BxRSlJhFHus");*/
+/*}*/
+
 .thumbnail img{
     width: 100%;
 }
@@ -19,6 +27,9 @@
 }
 
 #jumbo{
-    background: url("https://source.unsplash.com/user/adorechang/rRljZzjNQAA/1600x900");
+    background: url("https://source.unsplash.com/user/ingle_jake/7aGWeUIf8W8/");
+    background-size: cover;
+    color: white;
+    background-position: center center;
     /*background: red;*/
 }
