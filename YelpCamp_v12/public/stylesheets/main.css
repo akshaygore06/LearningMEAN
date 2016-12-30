@@ -17,3 +17,8 @@
 #deleteComment{
     display: inline;
 }
+
+#jumbo{
+    background: url("https://source.unsplash.com/user/adorechang/rRljZzjNQAA/1600x900");
+    /*background: red;*/
+}
