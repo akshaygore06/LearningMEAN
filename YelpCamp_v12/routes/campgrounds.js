@@ -26,12 +26,13 @@ router.post("/", middleware.isLoggedin, function(req,res){
   var name = req.body.name;
   var image = req.body.image;
   var description = req.body.description;
+  var price = req.body.price;
   var author = {
       id: req.user._id,
       username : req.user.username
   }
    
-  var newCampground = {name:name, image:image, description:description, author:author}
+  var newCampground = {name:name, image:image, description:description, author:author, price:price}
   
   
   Campground.create(newCampground, function(err,campground){
