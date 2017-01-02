@@ -31,7 +31,7 @@ router.post("/register",function(req, res) {
             return res.redirect("/register");
         }
         passport.authenticate("local")(req,res,function(){
-           req.flash("error", "Welcome to Yelpcamp "+ newUser.username );
+           req.flash("success", "Welcome to Yelpcamp "+ newUser.username );
            res.redirect("/campgrounds"); 
         });
     });
